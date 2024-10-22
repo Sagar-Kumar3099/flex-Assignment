@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coinswitch</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --background-color: white;
+            --nav-bg-color: white;
+            --nav-text-color: black;
+            --button-bg-color: #ccff00;
+            --button-text-color: black;
+            --main-bg-gradient: linear-gradient(rgb(155, 155, 228), white);
+            --heading-color: black;
+            --text-color: black;
+        }
+
+        /* Dark mode variables */
+        .dark-mode {
+            --background-color: #121212;
+            --nav-bg-color: #1e1e1e;
+            --nav-text-color: #ffffff;
+            --button-bg-color: #486EFF;
+            --button-text-color: #ffffff;
+            --main-bg-gradient: linear-gradient(rgb(40, 40, 40), #121212);
+            --heading-color: white;
+            --text-color: white;
+        }
+
+        body {
+            background-color: var(--background-color);
+            font-family: 'Arial', sans-serif;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav {
+            background-color: var(--nav-bg-color);
+            height: 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            color: var(--nav-text-color);
+        }
+
+        #left {
+            display: flex;
+            align-items: center;
+        }
+
+        #left img {
+            height: 32px;
+            width: auto;
+        }
+
+        #right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        #right p {
+            color: var(--nav-text-color);
+            margin: 0;
+        }
+
+        select {
+            border: 2px solid white;
+            font-family: 'Arial', sans-serif;
+            font-size: 14px;
+            padding: 5px;
+            background-color: var(--nav-bg-color);
+            color: var(--nav-text-color);
+        }
+
+        button {
+            font-family: 'Arial', sans-serif;
+            font-size: 14px;
+            font-weight: bold;
+            color: var(--button-text-color);
+            background-color: var(--button-bg-color);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #content {
+            background-image: var(--main-bg-gradient);
+            width: 100%;
+            height: calc(100vh - 50px);
+            display: flex;
+            align-items: flex-start;
+            padding: 100px 50px;
+        }
+
+        #content img {
+            flex: 1;
+            max-width: 40%;
+        }
+
+        #text {
+            flex: 2;
+            padding-left: 50px;
+        }
+
+        #head {
+            padding-top: 20px;
+            font-size: 50px;
+            color: var(--heading-color);
+        }
+
+        #blue {
+            color: #486EFF;
+        }
+
+        #para {
+            font-family: 'Arial', sans-serif;
+            font-size: 30px;
+            color: var(--text-color);
+            margin-top: 50px;
+        }
+
+        /* Toggle button */
+        #toggleMode {
+            margin-top: 50px;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            border: none;
+            background-color: var(--button-bg-color);
+            color: var(--button-text-color);
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        /* Media Queries */
+        /* Tablet */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                height: auto;
+                padding: 10px;
+            }
+
+            #right {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+                padding-top: 10px;
+            }
+
+            #content {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                padding: 50px 20px;
+            }
+
+            #content img {
+                max-width: 60%;
+                margin-bottom: 20px;
+            }
+
+            #text {
+                padding: 0;
+            }
+
+            #head {
+                font-size: 36px;
+            }
+
+            #para {
+                font-size: 24px;
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 480px) {
+            nav {
+                padding: 10px;
+            }
+
+            #right {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            button {
+                padding: 8px 16px;
+                font-size: 12px;
+            }
+
+            #content {
+                padding: 20px 10px;
+            }
+
+            #head {
+                font-size: 28px;
+            }
+
+            #para {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button id="toggleMode" onclick="toggleMode()">Toggle Dark/Light Mode</button>
+    <nav>
+        <div id="left">
+            <img src="https://coinswitch.co/_next/static/media/logo.01525825.svg" alt="logo">
+        </div>
+        <div id="right">
+            <select name=""><option value="">Products</option></select>
+            <p>Coins</p>
+            <p>Ventures</p>
+            <p>Blog</p>
+            <select name="">
+                <option value="">Company</option>
+            </select>
+            <button>Login to Pro</button>
+        </div>
+    </nav>
+    <div id="content">
+        <img src="https://coinswitch.co/_next/static/media/logo.01525825.svg" alt="logo">
+        <div id="text">
+            <div id="head">
+                <h1>Your Innovation</h1>
+                <h1 id="blue">Our Fuel</h1>
+            </div>
+            <div id="para">
+                <p>CoinSwitch Ventures invests in the most promising Web3 and</p>
+                <p>blockchain projects in India. Does that sound like you?</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+    </script>
+</body>
+</html>
