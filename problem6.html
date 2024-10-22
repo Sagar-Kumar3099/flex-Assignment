@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+        }
+        #left{
+            width:35%;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            padding-left: 30px;
+            justify-content: center;
+        }
+        #right{
+            width: 70%;
+            height:50px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+        nav{
+            border-bottom:solid black 5px;
+            border-right: 5px solid black;
+            border-top: solid black 2px;
+            border-left: solid black 2px;
+            border-radius: 10px;
+            height: 50px;
+            display: flex;
+            justify-content: space-around;
+            background-color: whitesmoke;
+        }
+        .aaa{
+            background-color: cadetblue;
+            color:blue;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div id="left"> 
+            <img src="https://cdn.masaischool.com/masai-website/Masai_Logo_dark_web_b21aab8c62.webp" alt="masai" height="40px">
+        </div>
+        <div id="right">
+            <select name="course" id="course1">
+                <option value="">Courses</option>
+            </select>
+            <p>FEES&ISA</p>
+            <p>ABOUT US</p>
+            <P>HIRE FROM US</p>
+            <P>FAQ</P>
+            <P>EVENTS</P>
+            <P class="aaa">REFER&EARN</P>
+            <button>login</button>
+        </div>
+    </nav>
+</body>
+</html>
